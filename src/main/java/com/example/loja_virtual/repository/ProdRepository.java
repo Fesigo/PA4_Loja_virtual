@@ -14,6 +14,7 @@ public class ProdRepository {
     
     private List<Produto> produtos;
 
+    /* alguns objetos para teste
     @PostConstruct
     public void criarProdutos(){
         Produto p1 = new Produto();
@@ -40,7 +41,7 @@ public class ProdRepository {
         produtos = new ArrayList<Produto>();
         produtos.add(p1);
         produtos.add(p2);
-    }
+    }*/
 
     public List<Produto> getAllProdutos(){
         return produtos;
