@@ -1,9 +1,6 @@
 package com.example.loja_virtual.repository;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.annotation.PostConstruct;
 
 import com.example.loja_virtual.model.Produto;
 

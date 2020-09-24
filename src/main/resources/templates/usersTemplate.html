@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <form th:action="@{/salvar}" method="POST">
+        Nome:<input type="text" name="nome"/>
+        Sobrenome:<input type="text" name="sobrenome"/>
+        Email:<input type="text" name="email"/>
+        Senha:<input type="text" name="senha"/>
+        <input type="submit" value="Salvar"/>
+    </form>
+    <!--<table>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.usuarioid}"></td>
+            <td th:text="${user.nome}"></td>
+            <td th:text="${user.sobrenome}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.senha}"></td>
+        </tr>
+    </table> /!--> 
+</body>
+</html>

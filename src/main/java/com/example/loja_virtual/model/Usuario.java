@@ -1,6 +1,21 @@
 package com.example.loja_virtual.model;
 
-public class Usuario {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Usuario implements Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int usuarioid;
     private String nome;
     private String sobrenome;
@@ -45,5 +60,11 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario [email=" + email + ", nome=" + nome + ", senha=" + senha + ", sobrenome=" + sobrenome
+                + ", usuarioid=" + usuarioid + "]";
     }
 }
