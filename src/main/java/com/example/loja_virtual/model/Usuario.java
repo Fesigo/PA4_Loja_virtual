@@ -1,11 +1,14 @@
 package com.example.loja_virtual.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario implements Serializable {
@@ -21,6 +24,10 @@ public class Usuario implements Serializable {
     private String sobrenome;
     private String email;
     private String senha;
+
+    @OneToMany
+    @JoinColumn(name = "ID_USUARIO")
+    private List <Produto> produtos;
 
     public int getUsuarioid() {
         return usuarioid;
@@ -60,6 +67,14 @@ public class Usuario implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     @Override

@@ -1,35 +1,33 @@
 package com.example.loja_virtual.controller;
 
-import java.util.List;
-
 import com.example.loja_virtual.model.Produto;
-import com.example.loja_virtual.repository.ProdRepository;
+import com.example.loja_virtual.service.ProdService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class ProdController {
-
+    
     @Autowired
-    private ProdRepository repositorio;
+    private ProdService servico;
 
-    @GetMapping("/lojavirtual")
-    public List<Produto> getAllProdutos(){
-        return repositorio.getAllProdutos();
+    @GetMapping("/produtos")
+    public ModelAndView getProdutos(){
+        ModelAndView mv = new ModelAndView("produtosTemplate");
+        mv.addObject("produtos", servico.getProdutos());
+
+        return mv;
     }
 
-    @GetMapping("/produto/{codigo}")
-    public Produto getProduto(@PathVariable int codigo){
-        return repositorio.getProdutoByCodigo(codigo);
-    }
+    @PostMapping("/salvarProduto")
+    public String salvar(@ModelAttribute Produto produto){
+        servico.salvar(produto);
 
-    @PostMapping("/cadastroproduto")
-    public Produto salvar(@RequestBody Produto produto){
-        return repositorio.save(produto);
+        return "redirect:/produtos";
     }
 }

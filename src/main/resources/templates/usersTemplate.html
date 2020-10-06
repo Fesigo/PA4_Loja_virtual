@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
+    <h1>Cadastro de Usuário</h1>
+    <a href="/">Menu</a>
+    <br>
+    <br>
     <form th:action="@{/salvar}" method="POST">
-        Nome:<input type="text" name="nome"/>
-        Sobrenome:<input type="text" name="sobrenome"/>
-        Email:<input type="text" name="email"/>
-        Senha:<input type="text" name="senha"/>
+        <label>Nome:</label><input type="text" name="nome"/><br>
+        <label>Sobrenome:</label><input type="text" name="sobrenome"/><br>
+        <label>Email:</label><input type="text" name="email"/><br>
+        <label>Senha:</label><input type="text" name="senha"/><br>
         <input type="submit" value="Salvar"/>
     </form>
-    <!--<table>
+
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            <th>Senha</th>
+        </tr>
+
         <tr th:each="user : ${users}">
             <td th:text="${user.usuarioid}"></td>
             <td th:text="${user.nome}"></td>
@@ -21,6 +41,6 @@
             <td th:text="${user.email}"></td>
             <td th:text="${user.senha}"></td>
         </tr>
-    </table> /!--> 
+    </table> 
 </body>
 </html>
