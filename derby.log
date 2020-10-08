@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Oct 08 00:38:59 BRT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0175-064a-5f1f-0000010ec7e8 
-on database directory C:\Users\felip\OneDrive\Desktop\PA4_prod\PA4_Loja_virtual\dbusuario with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
-Loaded from file:/C:/Users/felip/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+Thu Oct 08 02:33:19 BRT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0175-06b3-0e8a-000000bfd3f0 
+on database directory E:\JooJ\PA4_Loja_virtual\dbusuario with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
+Loaded from file:/C:/Users/Gui%20Machado/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=14.0.1+7
-user.dir=c:\Users\felip\OneDrive\Desktop\PA4_prod\PA4_Loja_virtual
+user.dir=e:\JooJ\PA4_Loja_virtual
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

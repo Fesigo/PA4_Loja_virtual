@@ -19,7 +19,7 @@ public class UserController {
     @GetMapping("/users")
     public ModelAndView getUsers(){
 
-        ModelAndView mv = new ModelAndView("usersTemplate");
+        ModelAndView mv = new ModelAndView("cadastroproduto");
         mv.addObject("users", us.getUsers());
 
         return mv;
@@ -39,7 +39,7 @@ public class UserController {
     
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "logins";
     }
     
     
