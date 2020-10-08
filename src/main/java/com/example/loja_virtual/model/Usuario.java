@@ -1,14 +1,10 @@
 package com.example.loja_virtual.model;
 
 import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario implements Serializable {
@@ -21,13 +17,16 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int usuarioid;
     private String nome;
-    private String sobrenome;
+    private String descricao;
     private String email;
     private String senha;
+    private String link;
 
-    @OneToMany
-    @JoinColumn(name = "ID_USUARIO")
-    private List <Produto> produtos;
+    private String cerveja;
+    private String vodka;
+    private String whiskey;
+    private String vinho;
+    private String licor;
 
     public int getUsuarioid() {
         return usuarioid;
@@ -45,12 +44,12 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getEmail() {
@@ -69,17 +68,52 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
+    public String getLink() {
+        return link;
     }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario [email=" + email + ", nome=" + nome + ", senha=" + senha + ", sobrenome=" + sobrenome
-                + ", usuarioid=" + usuarioid + "]";
+    public String getCerveja() {
+        return cerveja;
     }
+
+    public void setCerveja(String cerveja) {
+        this.cerveja = cerveja;
+    }
+
+    public String getVodka() {
+        return vodka;
+    }
+
+    public void setVodka(String vodka) {
+        this.vodka = vodka;
+    }
+
+    public String getWhiskey() {
+        return whiskey;
+    }
+
+    public void setWhiskey(String whiskey) {
+        this.whiskey = whiskey;
+    }
+
+    public String getVinho() {
+        return vinho;
+    }
+
+    public void setVinho(String vinho) {
+        this.vinho = vinho;
+    }
+
+    public String getLicor() {
+        return licor;
+    }
+
+    public void setLicor(String licor) {
+        this.licor = licor;
+    }
+
 }

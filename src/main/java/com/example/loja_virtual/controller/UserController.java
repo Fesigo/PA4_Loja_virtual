@@ -59,4 +59,9 @@ public class UserController {
         mv.addObject("user", user);
         return mv;
     }
+
+    @GetMapping("/busca")
+    public String busca(){
+        return "tiposBebida";
+    }
 }

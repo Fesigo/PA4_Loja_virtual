@@ -11,21 +11,34 @@
     </style>
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
+    <h1>Cadastro de Loja</h1>
     <a href="/">Menu</a>
     <br>
     <br>
     <form th:action="@{/salvar}" method="POST">
-        <label>Nome:</label><input type="text" name="nome"/><br>
-        <label>Sobrenome:</label><input type="text" name="sobrenome"/><br>
-        <label>Email:</label><input type="text" name="email"/><br>
-        <label>Senha:</label><input type="text" name="senha"/><br>
+        Nome:<input type="text" name="nome"/>
+        Descricao:<input type="text" name="descricao"/>
+        Link:<input type="text" name="link"/>
+        Email:<input type="text" name="email"/>
+        Senha:<input type="text" name="senha"/>
+        <br>
+        <input type="checkbox" name="cerveja" value="Cerveja">
+        <label for="cerveja">Cerveja</label><br>
+        <input type="checkbox" name="vodka" value="Vodka">
+        <label for="Vodka">Vodka</label><br>
+        <input type="checkbox" name="whiskey" value="Whiskey">
+        <label for="whiskey">Whiskey</label><br>
+        <input type="checkbox" name="vinho" value="Vinho">
+        <label for="vinho">Vinho</label><br>
+        <input type="checkbox" name="licor" value="Licor">
+        <label for="licor">Licor</label><br>
+        <br>
         <input type="submit" value="Salvar"/>
     </form>
 
     <br>
     <br>
-    <table>
+    <!--<table>
         <tr>
             <th>Código</th>
             <th>Nome</th>
@@ -41,6 +54,6 @@
             <td th:text="${user.email}"></td>
             <td th:text="${user.senha}"></td>
         </tr>
-    </table> 
+    </table> !-->
 </body>
 </html>
