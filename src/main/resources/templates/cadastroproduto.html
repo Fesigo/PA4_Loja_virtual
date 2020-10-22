@@ -25,67 +25,67 @@
     <link href="form-validation.css" rel="stylesheet">
 </head>
 
-    <body class="bg-light">
-        <div class="container">
+<body class="bg-dark">
+    <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="120">
-        <h2>Cadastro</h2>
-        <p class="lead">Faça o cadastro de sua loja!</p>
+        <h2> <div class="text-light">Cadastro</div></h2>
+        <p class="text-light">Faça o cadastro de sua loja!</p>
       </div>
 
         <div class="row">
-            <div class="d-block mx-auto mb-4">
+            <div class="text-light d-block mx-auto mb-4">
                 <form th:action="@{/salvar}" method="POST">
                     <div class="row">
-                        <div class="d-block mx-3 mb-4">
+                        <div class="text-light d-block mx-3 mb-4">
                             <label for="firstName">Nome da loja</label>
                             <input type="text" class="form-control" name="nome" required>
                         </div>
-                        <div class="d-block mx-3 mb-4">
+                        <div class="text-light d-block mx-3 mb-4">
                             <label for="email" class="email">Email</label>
                             <input type="email" name="email" class="form-control" placeholder="nome@exemplo.com" required>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="text-light mb-3">
                         <label for="link">Site</label>
                         <input type="text" class="form-control" name="link" placeholder="www.exemplo.com.br">
                     </div>
             
-                    <div class="form-group">
+                    <div class="text-light form-group">
                         <label for="exampleFormControlTextarea1">Descrição</label>
                         <textarea class="form-control" name="descricao" rows="3"></textarea>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="text-light mb-3">
                         <label for="inputPassword">Senha</label>
                         <input type="password" class="form-control" name="senha" placeholder="Senha">
                     </div>
 
-                    <div class="form-check form-check-inline">
+                    <div class="text-light form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" name="cerveja" value="Cerveja">
                         <label class="form-check-label" for="inlineCheckbox1">Cerveja</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="text-light form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" name="vodka" value="Vodka">
                         <label class="form-check-label" for="inlineCheckbox2">Vodka</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="text-light form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" name="whiskey" value="Whisky">
                         <label class="form-check-label" for="inlineCheckbox3">Whisky</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="text-light form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" name="vinho" value="Vinho">
                         <label class="form-check-label" for="inlineCheckbox4">Vinho</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="text-light form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" name="licor" value="Licor">
                         <label class="form-check-label" for="inlineCheckbox5">Licor</label>
                     </div>
                     <div> 
     
-                    <div class="py-3">
-                    <a <button type="button" class="btn btn-primary" href="/">Menu </button> </a>
-                    <input class="btn btn-primary" type="submit" value="Salvar">
+                    <div class="text-light py-3">
+                    <a <button type="button" class="btn btn-secondary" href="/">Home </button> </a>
+                    <input class="btn btn-secondary" type="submit" value="Salvar">
                     </div>
                 </form>
         </div>
