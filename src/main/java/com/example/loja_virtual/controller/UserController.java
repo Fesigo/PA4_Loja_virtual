@@ -1,5 +1,8 @@
 package com.example.loja_virtual.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.example.loja_virtual.model.Usuario;
 import com.example.loja_virtual.service.UserService;
 
@@ -8,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -30,12 +34,6 @@ public class UserController {
         us.salvar(user);
         return "redirect:/users";
     }
-
-    /*@RequestMapping("/cadastroUsuario")
-    public String form(){
-        return "cadastroUsuario";
-    }*/
-
     
     @GetMapping("/login")
     public String login(){
@@ -55,7 +53,6 @@ public class UserController {
             mv.setViewName("userView");
         }
 
-
         mv.addObject("user", user);
         return mv;
     }
@@ -63,5 +60,22 @@ public class UserController {
     @GetMapping("/busca")
     public String busca(){
         return "tiposBebida";
+    }
+
+    @PostMapping("/busca")
+    public ModelAndView lojas(@ModelAttribute String bebida){
+        ModelAndView mv = new ModelAndView();
+        List<Usuario> lojasbebidas = new ArrayList<Usuario>();
+
+        if(bebida == "Cerveja"){
+            lojasbebidas = us.getUsersByCerveja("Cerveja");
+            mv.addObject("lojasbebida", lojasbebidas);
+            //mv.addObject("busca", us.getUsersByCerveja("Cerveja"));
+            //mv.addObject("user", user);
+            
+            // mv.setViewName("lojas");
+        }
+
+        return mv;
     }
 }

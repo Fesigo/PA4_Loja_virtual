@@ -10,6 +10,10 @@
     <a href="/">Menu</a>
     <br>
     <br>
+    <form th:action="@{/busca}" method="POST">
+        Cerveja<input type="radio" name="bebida" value="Cerveja" />
+        <input type="submit" value="Buscar" />
+    </form>
     
 </body>
 </html>

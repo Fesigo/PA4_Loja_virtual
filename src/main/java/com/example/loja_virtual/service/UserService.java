@@ -1,5 +1,6 @@
 package com.example.loja_virtual.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.loja_virtual.model.Usuario;
@@ -34,5 +35,21 @@ public class UserService {
             user = null;
         }
         return user;
+    }
+
+    public List<Usuario> getUsersByCerveja(String cerveja){
+        List<Usuario> lojaslist = new ArrayList<Usuario>();
+        List<Usuario> cervejalist = new ArrayList<Usuario>();
+        
+        lojaslist = repository.findAll();
+
+        for(Usuario user : lojaslist){
+            
+            if (user.getCerveja() == "Cerveja") {
+                cervejalist.add(user);
+            }
+        }
+
+        return cervejalist;
     }
 }
