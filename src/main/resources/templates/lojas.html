@@ -6,12 +6,23 @@
     <title>Lojas</title>
 </head>
 <body>
-    <h1>Lojas</h1>
     <a href="/">Menu</a>
+    <a href="/busca">Voltar</a>
+    <h1>Lojas</h1>
+
     <h3>
-        <p 
-            th:text="${'Bem vindo ' + lojasbebidas.nome + '!'}">
-        </p>
+        <td th:text="'Bebida: ' + ${bebida}"></td> <br>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+
+            </tr>
+            <tr th:each="loja : ${lojasbebidas}">
+                <td th:text="${loja.nome}"></td>
+                <th th:text="${loja.descricao}"></th>
+            </tr>
+        </table>
     </h3>
 
 </body>

@@ -3,14 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User View</title>
+    <title>Perfil</title>
 </head>
 <body>
-    <h1>Login realizado com sucesso!</h1>
-    <h3>
-        <p 
-            th:text="${'Bem vindo ' + user.nome + '!'}">
+    <a <button type="button" class="btn btn-primary" href="/">Menu </button> </a>
+    <h1>   
+        <p
+            th:text="${user.nome}"></p>
         </p>
+    </h1>
+    <h3>
+        <label>Descrição:</label><br> <td th:text="${user.descricao}"></td>
+        <br>
+        <br>
+        <label>Email:</label> <td th:text="${user.email}"></td> <br>
+        <br>
+        <label>Site:</label> <td th:text="${user.link}"></td> <br>
+        <br>
+        <label>Bebidas:</label> <br>
+        
+        <td th:text="${user.cerveja}"></td> <br>
+        <td th:text="${user.whiskey}"></td> <br>
+        <td th:text="${user.vodka}"></td> <br>
+        <td th:text="${user.licor}"></td> <br>
+        <td th:text="${user.vinho}"></td> <br>
+        
+        <a th:href="@{'/editarLoja?usuarioid=' + ${user.usuarioid}}">Editar</a>
     </h3>
+
 </body>
 </html>
+
+<!--<table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            <th>Senha</th>
+        </tr>
+
+        <tr th:each="user : ${users}">
+            <td th:text="${user.usuarioid}"></td>
+            <td th:text="${user.nome}"></td>
+            <td th:text="${user.sobrenome}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.senha}"></td>
+        </tr>
+    </table> !-->
