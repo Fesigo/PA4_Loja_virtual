@@ -31,7 +31,7 @@ public class LojaController {
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Loja user){
         us.salvar(user);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
     @GetMapping("/login")

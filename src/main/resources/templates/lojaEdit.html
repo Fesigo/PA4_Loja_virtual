@@ -11,7 +11,7 @@
     <br>
     <br>
 
-    <form th:action="{/salvar}" th:object="${user}" method="POST" id="formUser">
+    <form th:action="@{/salvar}" th:object="${user}" method="POST" id="formUser">
 
         <label>ID: </label> <span th:text="${user.usuarioid}"></span>
         <br>
@@ -20,7 +20,26 @@
         <label>Nome: </label>
         <input type="text" placeholder="Digite o nome" th:value="${user.nome}" name="nome" required/>
         <br>
-
+        <label>Descrição: </label>
+        <input type="text" placeholder="Digite a descrição" th:value="${user.descricao}" name="descricao" required/>
+        <br>
+        <label>Email: </label>
+        <input type="text" placeholder="Digite o email" th:value="${user.email}" name="email" required/>
+        <br>
+        <input type="hidden" th:value="${user.senha}" th:field="${user.senha}" name="senha" />
+        <label>Link: </label>
+        <input type="text" placeholder="Digite o link" th:value="${user.link}" name="link" required/>
+        <br>
+        <label>Cidade: </label>
+        <input type="text" placeholder="Digite a cidade" th:value="${user.cidade}" name="cidade" required/>
+        <br>
+        <label>Estado: </label>
+        <input type="text" placeholder="Digite o estado" th:value="${user.estado}" name="estado" required/>
+        <input type="hidden" th:value="${user.cerveja}" th:field="${user.cerveja}" name="cerveja" />
+        <input type="hidden" th:value="${user.vodka}" th:field="${user.vodka}" name="vodka" />
+        <input type="hidden" th:value="${user.whiskey}" th:field="${user.whiskey}" name="whiskey" />
+        <input type="hidden" th:value="${user.vinho}" th:field="${user.vinho}" name="vinho" />
+        <input type="hidden" th:value="${user.licor}" th:field="${user.licor}" name="licor" />
 
         <br>
         <br>
