@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Usuario implements Serializable {
+public class Loja implements Serializable {
 
     /**
      *
@@ -22,6 +22,8 @@ public class Usuario implements Serializable {
     private String email;
     private String senha;
     private String link;
+    private String cidade;
+    private String estado;
 
     private String cerveja;
     private String vodka;
@@ -115,6 +117,22 @@ public class Usuario implements Serializable {
 
     public void setLicor(String licor) {
         this.licor = licor;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
 }

@@ -3,37 +3,37 @@ package com.example.loja_virtual.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.loja_virtual.model.Usuario;
-import com.example.loja_virtual.repository.UserRepositoryInterface;
+import com.example.loja_virtual.model.Loja;
+import com.example.loja_virtual.repository.LojaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class LojaService {
     
     @Autowired
-    private UserRepositoryInterface repository;
+    private LojaRepository repository;
 
-    public List<Usuario> getUsers(){
+    public List<Loja> getUsers(){
         return repository.findAll();
     }
 
-    public Usuario getUserById(Integer usuarioid){
+    public Loja getUserById(Integer usuarioid){
         return repository.findById(usuarioid).get();
     }
 
-    public void salvar(Usuario user){
+    public void salvar(Loja user){
         repository.save(user);
     }
 
-    public Usuario findUserByEmail(String email){
+    public Loja findUserByEmail(String email){
         return repository.findUserByEmail(email);
     }
 
-    public Usuario getUserByLogin(String email, String senha)
+    public Loja getUserByLogin(String email, String senha)
     {
-        Usuario user = findUserByEmail(email);
+        Loja user = findUserByEmail(email);
 
         if(!user.getSenha().equals(senha)){
             user = null;
@@ -41,11 +41,11 @@ public class UserService {
         return user;
     }
 
-    public List<Usuario> getUsersByCerveja(){
-        List<Usuario> lojaslist = repository.findAll();
-        List<Usuario> cervejalist = new ArrayList<Usuario>();
+    public List<Loja> getUsersByCerveja(){
+        List<Loja> lojaslist = repository.findAll();
+        List<Loja> cervejalist = new ArrayList<Loja>();
 
-        for(Usuario user : lojaslist){
+        for(Loja user : lojaslist){
             
             if (user.getCerveja() != null && user.getCerveja().equals("Cerveja")) {
                 cervejalist.add(user);
@@ -55,11 +55,11 @@ public class UserService {
         return cervejalist;
     }
 
-    public List<Usuario> getUsersByVodka(){
-        List<Usuario> lojaslist = repository.findAll();
-        List<Usuario> vodkalist = new ArrayList<Usuario>();
+    public List<Loja> getUsersByVodka(){
+        List<Loja> lojaslist = repository.findAll();
+        List<Loja> vodkalist = new ArrayList<Loja>();
 
-        for(Usuario user : lojaslist){
+        for(Loja user : lojaslist){
             
             if (user.getVodka() != null && user.getVodka().equals("Vodka")) {
                 vodkalist.add(user);
@@ -69,11 +69,11 @@ public class UserService {
         return vodkalist;
     }
 
-    public List<Usuario> getUsersByWhiskey(){
-        List<Usuario> lojaslist = repository.findAll();
-        List<Usuario> whiskeylist = new ArrayList<Usuario>();
+    public List<Loja> getUsersByWhiskey(){
+        List<Loja> lojaslist = repository.findAll();
+        List<Loja> whiskeylist = new ArrayList<Loja>();
 
-        for(Usuario user : lojaslist){
+        for(Loja user : lojaslist){
             
             if (user.getWhiskey() != null && user.getWhiskey().equals("Whiskey")) {
                 whiskeylist.add(user);
@@ -83,11 +83,11 @@ public class UserService {
         return whiskeylist;
     }
 
-    public List<Usuario> getUsersByVinho(){
-        List<Usuario> lojaslist = repository.findAll();
-        List<Usuario> vinholist = new ArrayList<Usuario>();
+    public List<Loja> getUsersByVinho(){
+        List<Loja> lojaslist = repository.findAll();
+        List<Loja> vinholist = new ArrayList<Loja>();
 
-        for(Usuario user : lojaslist){
+        for(Loja user : lojaslist){
             
             if (user.getVinho() != null && user.getVinho().equals("Vinho")) {
                 vinholist.add(user);
@@ -97,11 +97,11 @@ public class UserService {
         return vinholist;
     }
 
-    public List<Usuario> getUsersByLicor(){
-        List<Usuario> lojaslist = repository.findAll();
-        List<Usuario> licorlist = new ArrayList<Usuario>();
+    public List<Loja> getUsersByLicor(){
+        List<Loja> lojaslist = repository.findAll();
+        List<Loja> licorlist = new ArrayList<Loja>();
 
-        for(Usuario user : lojaslist){
+        for(Loja user : lojaslist){
             
             if (user.getLicor() != null && user.getLicor().equals("Licor")) {
                 licorlist.add(user);
