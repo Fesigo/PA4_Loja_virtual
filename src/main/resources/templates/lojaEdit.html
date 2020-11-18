@@ -35,11 +35,19 @@
         <br>
         <label>Estado: </label>
         <input type="text" placeholder="Digite o estado" th:value="${user.estado}" name="estado" required/>
-        <input type="hidden" th:value="${user.cerveja}" th:field="${user.cerveja}" name="cerveja" />
-        <input type="hidden" th:value="${user.vodka}" th:field="${user.vodka}" name="vodka" />
-        <input type="hidden" th:value="${user.whiskey}" th:field="${user.whiskey}" name="whiskey" />
-        <input type="hidden" th:value="${user.vinho}" th:field="${user.vinho}" name="vinho" />
-        <input type="hidden" th:value="${user.licor}" th:field="${user.licor}" name="licor" />
+        
+        <br>
+        
+        <input type="checkbox" th:value="Cerveja" th:field="${user.cerveja}" id="bebida1" name="Cerveja" value="Cerveja">
+        <label for="bebida1"> Cerveja</label><br>
+        <input type="checkbox" th:value="Vodka" th:field="${user.vodka}" id="bebida2" name="Vodka" value="Vodka">
+        <label for="bebida2"> Vodka</label><br>
+        <input type="checkbox" th:value="Whiskey" th:field="${user.whiskey}" id="bebida3" name="Whiskey" value="Whiskey">
+        <label for="bebida3"> Whiskey</label><br>
+        <input type="checkbox" th:value="Vinho" th:field="${user.vinho}" id="bebida4" name="Vinho" value="Vinho">
+        <label for="bebida4"> Vinho</label><br>
+        <input type="checkbox" th:value="Licor" th:field="${user.licor}" id="bebida5" name="Licor" value="Licor">
+        <label for="bebida5"> Licor</label><br>
 
         <br>
         <br>
