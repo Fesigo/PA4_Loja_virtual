@@ -83,9 +83,6 @@ public class LojaController {
             lojasbebidas = us.getUsersByCerveja();
             mv.addObject("lojasbebidas", lojasbebidas);
         }
-        //lojasbebidas = us.getUsersByCerveja("Cerveja");
-        //mv.addObject("lojasbebidas", lojasbebidas);
-       // bebida = "Cerveja";
         else if(bebida.equals("Vodka")){
             
             lojasbebidas = us.getUsersByVodka();
@@ -105,6 +102,10 @@ public class LojaController {
             
             lojasbebidas = us.getUsersByLicor();
             mv.addObject("lojasbebidas", lojasbebidas);
+        }
+
+        if(lojasbebidas.size() == 0){
+            mv.setViewName("semlojas");
         }
         
         return mv;

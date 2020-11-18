@@ -34,6 +34,17 @@ public class LojaService {
     public Loja getUserByLogin(String email, String senha)
     {
         Loja user = findUserByEmail(email);
+        List<Loja> lojaslist = repository.findAll();
+        int cont=0;
+        
+        for(Loja l : lojaslist){
+            if(l == user){
+                cont=1;
+            }
+        }
+        if(cont==0){
+            return null;
+        }
 
         if(!user.getSenha().equals(senha)){
             user = null;
