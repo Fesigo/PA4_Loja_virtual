@@ -31,6 +31,7 @@ public class LojaController {
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Loja user){
         us.salvar(user);
+        
         return "redirect:/";
     }
 
@@ -61,6 +62,17 @@ public class LojaController {
         ModelAndView mv = new ModelAndView("lojaEdit");
 
         Loja user = us.getUserById(usuarioid);
+        mv.addObject("user", user);
+
+        return mv;
+    }
+
+    @PostMapping("/editar")
+    public ModelAndView editado(@ModelAttribute Loja user){
+        us.salvar(user);
+        
+        ModelAndView mv = new ModelAndView("userView");
+        
         mv.addObject("user", user);
 
         return mv;

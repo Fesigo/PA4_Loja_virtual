@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar</title>
 </head>
 <body>
     <h1>Editar Loja</h1>
@@ -11,7 +11,7 @@
     <br>
     <br>
 
-    <form th:action="@{/salvar}" th:object="${user}" method="POST" id="formUser">
+    <form th:action="@{/editar}" th:object="${user}" method="POST" id="formUser">
 
         <label>ID: </label> <span th:text="${user.usuarioid}"></span>
         <br>
